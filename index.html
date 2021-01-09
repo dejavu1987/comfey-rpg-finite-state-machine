@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Comfey Demo</title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div
+        id="bg"
+        data-bind-attr="location::style::background-image:url(./assets/bg/$.jpg)"
+      ></div>
+      <header>
+        <div class="location">
+          📍 Location: <span data-bind="location">x</span>
+        </div>
+        <div id="cash" data-bind="cash">x</div>
+      </header>
+      <div id="buttons"></div>
+      <footer>
+        <h3>Inventory</h3>
+        <div id="inventory"></div>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
