@@ -11,10 +11,7 @@
   </head>
   <body>
     <div id="app">
-      <div
-        id="bg"
-        data-bind-attr="location::style::background-image:url(./assets/bg/$.jpg)"
-      ></div>
+      <div id="bg" data-bind-attr="location::class::bg-$"></div>
       <header>
         <div class="location">
           📍 Location: <span data-bind="location">x</span>
