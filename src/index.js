@@ -3,8 +3,9 @@ import camelCaseToTitleCase from "./camelCaseHelper";
 import "comfey/comfey.css";
 import "./styles.css";
 import journey from "./journey";
+const DEBUG = false;
 
-const app = new Comfey(document.getElementById("app"), true);
+const app = new Comfey(document.getElementById("app"), DEBUG);
 const $buttons = document.getElementById("buttons");
 const $inventory = document.getElementById("inventory");
 // Initialize states
@@ -79,6 +80,7 @@ function addMoveButton(action, location) {
   const btn = document.createElement("button");
   btn.innerText = "➡️ " + camelCaseToTitleCase(action);
   btn.dataset.action = action;
+  btn.className = "move";
   btn.dataset.location = location;
   btn.onclick = moveButtonClick;
   $buttons.appendChild(btn);
@@ -88,6 +90,7 @@ function addActionButton(action, results) {
   const btn = document.createElement("button");
   btn.innerText = "🎬 " + camelCaseToTitleCase(action);
   btn.dataset.action = action;
+  btn.className = "action";
   btn.onclick = actionButtonClick;
 
   for (const key in results) {
