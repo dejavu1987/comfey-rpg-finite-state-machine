@@ -7,16 +7,16 @@ export default {
   },
   drawer: {
     wearMask: {
-      inventory: "+mask"
+      inventory: "+🤿 mask"
     },
     closeDrawer: "livingRoom"
   },
   bath: {
     takeAShower: {
-      inventory: "+clean"
+      inventory: "+🧼 clean"
     },
     brushTeeth: {
-      inventory: "+smile"
+      inventory: "+😁 smile"
     },
     exitBath: "livingRoom"
   },
@@ -30,15 +30,15 @@ export default {
   },
   kiosk: {
     buyBeer: {
-      inventory: "+beer",
+      inventory: "+🍺 beer",
       cash: -1
     },
     buyEnergyDrink: {
-      inventory: "+energyDrink",
+      inventory: "+⚡️ energyDrink",
       cash: -1
     },
     buySnacks: {
-      inventory: "+snacks",
+      inventory: "+🍟 snacks",
       cash: -5
     },
     exitKiosk: "street"
@@ -54,45 +54,45 @@ export default {
   },
   mall: {
     buyShirt: {
-      inventory: "+shirt",
+      inventory: "+👕 shirt",
       cash: -20
     },
     buyShoes: {
-      inventory: "+shoes",
+      inventory: "+🥾 shoes",
       cash: -60
     },
     buyJeans: {
-      inventory: "+jeans",
+      inventory: "+👖 jeans",
       cash: -60
     },
     exitMall: "street"
   },
   supermarket: {
     buyFruits: {
-      inventory: "+fruits",
+      inventory: "+🍎 fruits",
       cash: -4
     },
     buyMeat: {
-      inventory: "+meat",
+      inventory: "+🍗 meat",
       cash: -5
     },
     buyFrozenPizza: {
-      inventory: "+frozenPizza",
+      inventory: "+🍕 frozenPizza",
       cash: -5
     },
     buyHammer: {
-      inventory: "+hammer",
+      inventory: "+⚒️ hammer",
       cash: -10
     },
     exitSupermarket: "street"
   },
   hospital: {
     getPainkillers: {
-      inventory: "+painkiller",
+      inventory: "+💊 painkiller",
       cash: -4
     },
     getFirstAidKit: {
-      inventory: "+firstAidKit",
+      inventory: "+➕ firstAidKit",
       cash: -10
     },
     exitHospital: "street"
