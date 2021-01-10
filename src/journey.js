@@ -24,7 +24,9 @@ export default {
     enterKiosk: "kiosk",
     enterMall: "mall",
     enterApartment: "livingRoom",
-    enterSupermarket: "supermarket"
+    enterSupermarket: "supermarket",
+    enterHospital: "hospital",
+    enterBar: "bar"
   },
   kiosk: {
     buyBeer: {
@@ -40,6 +42,15 @@ export default {
       cash: -5
     },
     exitKiosk: "street"
+  },
+  bar: {
+    drinkBeer: {
+      cash: -5
+    },
+    tipBartender: {
+      cash: -5
+    },
+    exitBar: "street"
   },
   mall: {
     buyShirt: {
@@ -74,5 +85,16 @@ export default {
       cash: -10
     },
     exitSupermarket: "street"
+  },
+  hospital: {
+    getPainkillers: {
+      inventory: "+painkiller",
+      cash: -4
+    },
+    getFirstAidKit: {
+      inventory: "+firstAidKit",
+      cash: -10
+    },
+    exitHospital: "street"
   }
 };

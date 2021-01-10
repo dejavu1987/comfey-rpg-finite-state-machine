@@ -49,6 +49,12 @@ body {
 .bg-supermarket {
   background-image: url(https://res.cloudinary.com/anilmaharjan-com-np/image/upload/v1610282034/supermarket.jpg);
 }
+.bg-hospital {
+  background-image: url(https://res.cloudinary.com/anilmaharjan-com-np/image/upload/v1610285341/hospital.jpg);
+}
+.bg-bar {
+  background-image: url(https://res.cloudinary.com/anilmaharjan-com-np/image/upload/v1610286553/bar.jpg);
+}
 
 header,
 footer {
@@ -69,6 +75,11 @@ footer {
 
 h3 {
   margin: 0;
+}
+
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #inventory {
