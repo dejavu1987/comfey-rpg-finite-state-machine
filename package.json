@@ -8,6 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "animate.css": "4.1.1",
     "comfey": "1.6.1"
   },
   "devDependencies": {

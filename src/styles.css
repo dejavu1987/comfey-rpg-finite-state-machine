@@ -17,6 +17,46 @@ body {
   justify-items: center;
 }
 
+#cash-update {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  right: 0;
+  top: 15px;
+  color: red;
+  padding: 5px 20px;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fade-in 0.3s;
+}
+
+.fade-out {
+  animation: fade-out 0.3s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#cash-update.visible {
+  display: block;
+}
+
 #bg {
   position: absolute;
   background-color: #eee;
@@ -138,5 +178,5 @@ button.action {
 }
 
 #cash::before {
-  content: "CASH: $ ";
+  content: "💰 $ ";
 }
