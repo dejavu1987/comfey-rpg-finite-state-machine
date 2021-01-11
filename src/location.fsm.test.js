@@ -25,7 +25,6 @@ test("It should transition on valid transition", () => {
 });
 
 test("It should have transitions", () => {
-  console.log(getTransitions());
   expect(getTransitions().length).toBeGreaterThan(0);
 });
 
@@ -35,6 +34,5 @@ test("Murder should transition to Jail", () => {
 });
 
 test("It should have no transitions out of Jail", () => {
-  console.log(getTransitions());
   expect(getTransitions().length).toBe(0);
 });
