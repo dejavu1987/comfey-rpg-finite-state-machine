@@ -1,18 +1,15 @@
-export default class fsm {
-  constructor(app, state, config, watcher) {
-    const [getState, setState] = app.useState(state, config.start, watcher);
-    this.config = config;
-    this.getState = getState;
-    this.setState = setState;
-  }
+export default function fsm(app, state, config, watcher) {
+  const [getState, setState] = app.useState(state, config.start, watcher);
 
-  getTransitions() {
-    return Object.keys(this.config[this.getState()]);
-  }
+  const getTransitions = () => {
+    return Object.keys(config[getState()]);
+  };
 
-  transition(key) {
-    if (!this.config[this.getState()].hasOwnProperty(key))
+  const transition = (key) => {
+    if (!config[getState()].hasOwnProperty(key))
       throw new Error("Invalid transition key");
-    this.setState(this.config[this.getState()][key]);
-  }
+    setState(config[getState()][key]);
+  };
+
+  return [getState, getTransitions, transition];
 }

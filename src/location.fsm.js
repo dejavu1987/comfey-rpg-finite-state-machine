@@ -17,7 +17,8 @@ export default {
     enterApartment: "livingRoom",
     enterSupermarket: "supermarket",
     enterHospital: "hospital",
-    enterBar: "bar"
+    enterBar: "bar",
+    murder: "jail"
   },
   kiosk: {
     exitKiosk: "street"
@@ -34,5 +35,6 @@ export default {
   },
   hospital: {
     exitHospital: "street"
-  }
+  },
+  jail: {}
 };

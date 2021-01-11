@@ -3,29 +3,38 @@ import Comfey from "comfey";
 import config from "./location.fsm";
 
 const app = new Comfey();
-const locationState = new fsm(app, "location", config);
+const [getState, getTransitions, transition] = fsm(app, "location", config);
 
 test("It should initialize fsm", () => {
-  expect(locationState).toBeDefined();
+  expect(getState()).toBeDefined();
 });
 
 test("It should have transitions", () => {
-  const transitions = locationState.getTransitions();
-  expect(transitions.length).toBeGreaterThan(0);
+  expect(getTransitions().length).toBeGreaterThan(0);
 });
 
 test("It should fail for invalid transition", () => {
   expect(() => {
-    locationState.transition("fooBar");
+    transition("fooBar");
   }).toThrow("Invalid transition key");
 });
 
 test("It should transition on valid transition", () => {
-  locationState.transition("exitApartment");
-  expect(locationState.getState()).toBe("street");
+  transition("exitApartment");
+  expect(getState()).toBe("street");
 });
 
 test("It should have transitions", () => {
-  const transitions = locationState.getTransitions();
-  expect(transitions.length).toBeGreaterThan(0);
+  console.log(getTransitions());
+  expect(getTransitions().length).toBeGreaterThan(0);
+});
+
+test("Murder should transition to Jail", () => {
+  transition("murder");
+  expect(getState()).toBe("jail");
+});
+
+test("It should have no transitions out of Jail", () => {
+  console.log(getTransitions());
+  expect(getTransitions().length).toBe(0);
 });
