@@ -3,14 +3,36 @@ import Comfey from "comfey";
 import config from "./location.fsm";
 
 const app = new Comfey();
-const [getState, getTransitions, transition] = fsm(app, "location", config);
+const { getState, getTransitions, transition } = fsm(
+  app,
+  "location",
+  config,
+  watcher
+);
+
+let watcherUpdatedVar = "";
+
+function watcher(newState, oldState) {
+  watcherUpdatedVar = oldState + "->" + newState;
+}
 
 test("It should initialize fsm", () => {
   expect(getState()).toBeDefined();
 });
 
+test("Initial state should match configuration", () => {
+  expect(getState()).toBe(config.start);
+});
+
 test("It should have transitions", () => {
   expect(getTransitions().length).toBeGreaterThan(0);
+});
+
+test("Watcher should be updating watcherUpdatedVar", () => {
+  transition("enterBath");
+  expect(watcherUpdatedVar).toBe("livingRoom->bath");
+  transition("exitBath");
+  expect(watcherUpdatedVar).toBe("bath->livingRoom");
 });
 
 test("It should fail for invalid transition", () => {
